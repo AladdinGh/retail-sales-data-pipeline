@@ -1,0 +1,2 @@
+-- ELT transformation logic
+-- This file will contain SQL logic for the ELT transformation phase

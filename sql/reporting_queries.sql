@@ -1,0 +1,3 @@
+-- Reporting queries
+-- This file contains reporting queries for checking business results
+-- Examples: revenue by category, orders by city, etc.
