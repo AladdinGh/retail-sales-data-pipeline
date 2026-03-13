@@ -102,12 +102,7 @@ def build_lookup(records, key_field):
 
 
 def build_sales_report(customers, products, orders):
-    
-      # Clean the data
-    customers = clean_customers(customers)
-    orders = clean_orders(orders)
-    products = clean_products(products)
-    
+
     customer_lookup = build_lookup(customers, "customer_id")
     product_lookup = build_lookup(products, "product_id")
 
@@ -145,15 +140,15 @@ def transform_data():
 
 
 
-if __name__ == "__main__":
-    customers = read_customers_csv()
-    orders = read_orders_json()
-    products = read_products_xml()
+def run_etl_transform(customers_raw, products_raw, orders_raw):
+    customers_clean = clean_customers(customers_raw)
+    products_clean = clean_products(products_raw)
+    orders_clean = clean_orders(orders_raw)
 
-  
-    #print("Customers:", customers[:2])
-    #print("Orders:", orders)
-    #print("Products:", products[:2])
-    sales_report= build_sales_report(customers, products, orders)
-    print("Sales Report:", sales_report[:2])
+    sales_report = build_sales_report(
+        customers_clean,
+        products_clean,
+        orders_clean
+    )
 
+    return sales_report
