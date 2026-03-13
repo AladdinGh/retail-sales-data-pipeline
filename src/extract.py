@@ -57,13 +57,3 @@ def read_products_xml():
 def extract_data():
     """Extract data from source files"""
     pass
-
-
-if __name__ == "__main__":
-    customers = read_customers_csv()
-    orders = read_orders_json()
-    products = read_products_xml()
-
-    print("Customers:", customers[:2])
-    print("Orders:", orders[:2])
-    print("Products:", products[:2])

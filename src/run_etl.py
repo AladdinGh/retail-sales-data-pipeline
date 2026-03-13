@@ -3,9 +3,26 @@ Run ETL pipeline
 This is the main script that runs the ETL version step by step.
 """
 
+from src.extract import read_customers_csv, read_orders_json, read_products_xml
+from src.transform_etl import run_etl_transform
+from src.load_postgres import load_sales_report
+
+
 def main():
-    """Main ETL pipeline runner"""
-    pass
+    customers_raw = read_customers_csv()
+    orders_raw = read_orders_json()
+    products_raw = read_products_xml()
+
+    sales_report = run_etl_transform(
+        customers_raw,
+        products_raw,
+        orders_raw
+    )
+
+    load_sales_report(sales_report)
+
+    print(f"ETL completed successfully. Loaded {len(sales_report)} rows into sales_report.")
+
 
 if __name__ == "__main__":
     main()

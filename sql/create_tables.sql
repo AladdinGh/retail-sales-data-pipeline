@@ -14,3 +14,9 @@ CREATE TABLE IF NOT EXISTS sales_report (
     price NUMERIC(10,2),
     total_amount NUMERIC(10,2)
 );
+
+
+CREATE TABLE IF NOT EXISTS category_summary (
+    category TEXT,
+    total_revenue NUMERIC(10,2)
+);
