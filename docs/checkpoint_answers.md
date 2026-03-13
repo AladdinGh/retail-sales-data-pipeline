@@ -6,7 +6,7 @@ In ETL we did the transformation on the data frames level not on the databese le
 
 Checkpoint Question 2
 Why does the ETL version transform data in Python before loading it into PostgreSQL?
-==> Because we need to diliver clean data to the database tables "silver data"
+==> Because we need to deliver clean data to the database tables "silver data"
 
 Checkpoint Question 3
 Why does the ELT version load raw data into PostgreSQL first before transforming it?
