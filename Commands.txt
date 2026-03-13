@@ -72,3 +72,6 @@ CREATE TABLE IF NOT EXISTS sales_report (
     total_amount NUMERIC(10,2)
 );
 
+
+# execute cmd directly from .sql file to my db
+psql -U postgres -h localhost -d cloudbridge_cars -f sql/03_practice_queries.sql
